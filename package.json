@@ -1,0 +1,51 @@
+{
+  "name": "media-automation-toolkit",
+  "version": "1.0.0",
+  "description": "Herramientas automatizadas para crear montajes multimedia con Node.js.",
+  "scripts": {
+    "collage-maker": "node ./scripts/collage.maker.js",
+    "video-maker": "node ./scripts/video.maker.js",
+    "lint": "eslint scripts tools",
+    "format": "prettier --write scripts tools",
+    "prepare": "husky install"
+  },
+  "author": "Jose Miguel",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmblanco/media-automation-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmblanco/media-automation-toolkit/issues"
+  },
+  "homepage": "https://github.com/jmblanco/media-automation-toolkit#readme",
+  "keywords": [
+    "media",
+    "automation",
+    "video",
+    "audio",
+    "montage",
+    "nodejs",
+    "toolkit"
+  ],
+  "dependencies": {
+    "ffmpeg-concat": "^1.3.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "get-audio-duration": "^4.0.1",
+    "sharp": "^0.34.2",
+    "videoshow": "^0.1.12"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "eslint": "^8.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

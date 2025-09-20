@@ -1,0 +1,51 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+
+# Misc
+*.sublime-workspace
+*.sublime-project
+
+# Media files
+*.mp3
+*.mp4
+*.wav
+*.avi
+*.mov
+*.flac
+*.mkv
+*.srt
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.webp
+*.ttf
+*.otf
+*.woff
+*.woff2
