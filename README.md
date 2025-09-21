@@ -60,12 +60,4 @@ npm install
 [![Node.js](https://img.shields.io/badge/Node.js-Documentation-green?logo=node.js)](https://nodejs.org/es/docs/)
 [![FFmpeg](https://img.shields.io/badge/FFmpeg-Guide-green?logo=ffmpeg)](https://ffmpeg.org/documentation.html)
 
----
 
-## 📝 Licencia
-
-Este proyecto es privado y para uso personal.
-
----
-
-> Desarrollado por Jose Miguel. Para dudas o mejoras, contacta al autor.
