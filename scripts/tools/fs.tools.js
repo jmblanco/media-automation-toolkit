@@ -2,7 +2,7 @@ const fs = require('fs');
 const { paths } = require('../config/assets.config');
 
 function ensureDirs() {
-  [paths.output, paths.tmp].forEach(dir => {
+  [paths.output, paths.tmp].forEach((dir) => {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir);
   });
 }
@@ -14,5 +14,5 @@ function cleanTmpDir() {
 
 module.exports = {
   ensureDirs,
-  cleanTmpDir
+  cleanTmpDir,
 };

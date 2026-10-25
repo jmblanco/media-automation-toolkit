@@ -1,0 +1,37 @@
+# ===================================================================
+# Kroma Studio - Docker Compose Stack
+# Compatible con Dockhand, Portainer, Docker Compose v2 y Swarm
+# ===================================================================
+
+services:
+  kroma-studio:
+    container_name: kroma-studio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kroma-studio:latest
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=3000
+      - APP_ROOT=/app
+      - JAMENDO_CLIENT_ID=${JAMENDO_CLIENT_ID:-}
+    volumes:
+      # Montajes persistentes para assets (imágenes, audios, fuentes) y renders generados
+      - ./assets:/app/assets
+      - ./output:/app/output
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/assets || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 512M

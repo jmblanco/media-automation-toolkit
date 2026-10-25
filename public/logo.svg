@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Degradado principal del fondo -->
+    <linearGradient id="kroma-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="50%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <!-- Degradado de la cinta y luz -->
+    <linearGradient id="kroma-glow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="60%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+
+    <!-- Sombra suave del icono -->
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#4F46E5" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Contenedor squircle con relieve -->
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#kroma-bg)" filter="url(#shadow)" />
+  
+  <!-- Borde sutil de cristal -->
+  <rect x="33" y="33" width="446" height="446" rx="111" stroke="white" stroke-width="2" stroke-opacity="0.25" />
+
+  <!-- Isotipo Kroma: "K" cinemática fusionada con símbolo Play y fotogramas -->
+  <!-- Barra vertical cinemática con muescas de película -->
+  <rect x="136" y="128" width="48" height="256" rx="16" fill="white" fill-opacity="0.95" />
+  <circle cx="160" cy="168" r="8" fill="#7C3AED" />
+  <circle cx="160" cy="212" r="8" fill="#7C3AED" />
+  <circle cx="160" cy="256" r="8" fill="#7C3AED" />
+  <circle cx="160" cy="300" r="8" fill="#7C3AED" />
+  <circle cx="160" cy="344" r="8" fill="#7C3AED" />
+
+  <!-- Diagonal superior (haz de luz hacia arriba a la derecha) -->
+  <path d="M216 232 L320 136 C332 125 352 133 352 149 L352 188 C352 198 346 208 338 214 L262 268 Z" fill="url(#kroma-glow)" />
+
+  <!-- Diagonal inferior (forma de Play / flecha de avance) -->
+  <path d="M228 260 L346 348 C360 358 352 384 334 384 L288 384 C278 384 268 378 262 372 L184 296 Z" fill="white" fill-opacity="0.95" />
+
+  <!-- Puntero Play flotante sutil en el centro -->
+  <polygon points="280,240 336,272 280,304" fill="#06B6D4" opacity="0.95" />
+</svg>

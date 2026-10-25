@@ -12,10 +12,13 @@ logs/
 dist/
 build/
 output/
+.nuxt/
+.output/
 
 # OS files
 .DS_Store
 Thumbs.db
+*:Zone.Identifier
 
 # IDE files
 .vscode/
@@ -24,6 +27,10 @@ Thumbs.db
 # Environment files
 .env
 .env.*
+!.env.example
+
+# Public static assets & brand
+!public/**
 
 # Misc
 *.sublime-workspace
@@ -44,8 +51,11 @@ Thumbs.db
 *.gif
 *.bmp
 *.svg
+!public/*.svg
+!public/**/*.svg
 *.webp
 *.ttf
 *.otf
 *.woff
 *.woff2
+!assets/**/.gitkeep

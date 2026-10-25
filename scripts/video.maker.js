@@ -1,42 +1,36 @@
 const path = require('path');
-const {
-    paths,
-    firstVideos,
-    lastVideos
-} = require('./config/assets.config');
-
+const { paths, firstVideos, lastVideos } = require('./config/assets.config');
 const { ensureDirs, cleanTmpDir } = require('./tools/fs.tools');
-const {
-    createVideoList,
-    createVideoWithVideos
-} = require('./tools/media.tools');
+const { createVideoList, createVideoWithVideos } = require('./tools/media.tools');
 
-// === Preparar carpetas necesarias ===
-ensureDirs();
+async function main() {
+  try {
+    ensureDirs();
 
-// === Generar lista ordenada de vídeos ===
-const videoList = createVideoList(paths.videos, firstVideos, lastVideos);
+    const videoList = createVideoList(paths.videos, firstVideos, lastVideos);
+    if (!videoList.length) {
+      console.warn('⚠️ No se encontraron vídeos para procesar en:', paths.videos);
+      return;
+    }
 
-if (!videoList.length) {
-    console.warn('⚠️ No se encontraron videos para procesar en', paths.videos);
-    process.exit(0);
+    const orderedInputPaths = videoList.map((v) => v.inputPath);
+    const outputPath = path.join(paths.output, 'montaje_final.mp4');
+
+    console.log(`🎬 Iniciando montaje de ${orderedInputPaths.length} clips...`);
+
+    await createVideoWithVideos(orderedInputPaths, outputPath, ({ percent, message }) => {
+      if (percent !== undefined) {
+        process.stdout.write(`\r⏳ [${percent}%] ${message}`);
+      }
+    });
+
+    console.log('\n🎉 ¡Montaje final generado con éxito en:', outputPath);
+  } catch (err) {
+    console.error('\n💥 Error durante la creación del vídeo:', err.message);
+    process.exitCode = 1;
+  } finally {
+    cleanTmpDir();
+  }
 }
 
-const orderedInputPaths = videoList.map(v => v.inputPath);
-
-// === Definir salida final ===
-const outputPath = path.join(paths.output, 'montaje_final.mp4');
-
-// === Ejecutar reencodeo y concatenación final ===
-createVideoWithVideos(
-    orderedInputPaths,
-    outputPath,
-    () => {
-        console.log('🎉 Montaje final generado correctamente.');
-        cleanTmpDir(); // ✅ limpieza aquí, controlada por el script
-    },
-    (err) => {
-        console.error('💥 Error durante la creación del video:', err.message)
-        cleanTmpDir();
-    }
-);
+main();
