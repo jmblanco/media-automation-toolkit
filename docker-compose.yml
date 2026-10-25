@@ -1,6 +1,6 @@
 # ===================================================================
 # Kroma Studio - Docker Compose Stack
-# Compatible con Dockhand, Portainer, Docker Compose v2 y Swarm
+# Compatible con Docker Compose v2, Portainer y Docker Swarm
 # ===================================================================
 
 services:

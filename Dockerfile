@@ -71,7 +71,7 @@ VOLUME ["/app/assets", "/app/output"]
 # Exponer el puerto de la aplicación web
 EXPOSE 3000
 
-# Healthcheck nativo para orquestadores (Dockhand, Portainer, Docker Compose)
+# Healthcheck nativo para orquestadores (Docker Compose, Portainer, Kubernetes)
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
   CMD curl -f http://localhost:3000/api/assets || exit 1
 

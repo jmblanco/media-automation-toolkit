@@ -25,7 +25,7 @@
 
 1. [Características Principales](#-características-principales)
 2. [Estructura del Proyecto](#-estructura-del-proyecto)
-3. [Despliegue con Docker y Dockhand](#-despliegue-con-docker-y-dockhand-recomendado)
+3. [Despliegue con Docker](#-despliegue-con-docker-recomendado)
 4. [Requisitos Previos (Ejecución Local)](#-requisitos-previos-ejecución-local)
 5. [Instalación Local](#-instalación-local)
 6. [Modos de Ejecución](#-modos-de-ejecución)
@@ -90,7 +90,7 @@ media-automation-toolkit/
 
 ---
 
-## 🐳 Despliegue con Docker y Dockhand (Recomendado)
+## 🐳 Despliegue con Docker (Recomendado)
 
 La forma más rápida y limpia de ejecutar Kroma Studio en cualquier equipo o servidor (sin necesidad de configurar Node.js o FFmpeg manualmente) es mediante su stack Docker:
 
@@ -100,7 +100,7 @@ docker compose up -d --build
 Abre tu navegador en **`http://localhost:3000`** (o la IP del servidor).
 
 - **Persistencia**: Tus archivos en `./assets` y `./output` están montados automáticamente.
-- **Dockhand / Portainer**: Compatible con un solo clic. Consulta la guía detallada en [`docs/DOCKER_DEPLOYMENT.md`](docs/DOCKER_DEPLOYMENT.md).
+- **Portainer / Docker Compose**: Compatible con un solo clic. Consulta la guía detallada en [`docs/DOCKER_DEPLOYMENT.md`](docs/DOCKER_DEPLOYMENT.md).
 
 ---
 

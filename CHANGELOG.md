@@ -8,13 +8,13 @@ El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/
 ## [1.5.0] - 2026-10-25
 
 ### Added
-- **Despliegue 100% Autocontenido con Docker & Stack Dockhand / Portainer**:
+- **Despliegue 100% Autocontenido con Docker Compose & Portainer**:
   - `Dockerfile` multi-stage optimizado (`node:20-bookworm-slim`):
     - Stage de compilación Nuxt 3 / Nitro y empaquetado de assets.
     - Stage de ejecución con FFmpeg nativo completo, tipografías TTF/OTF del sistema, `fontconfig` y `ca-certificates`.
     - Cumplimiento de Principio de Mínimo Privilegio (PoLP): ejecución como usuario sin privilegios `node:node`.
     - Healthcheck nativo verificando `/api/assets` periódicamente.
-  - `docker-compose.yml` para despliegue en un solo clic compatible con Dockhand, Portainer y Docker Compose v2.
+  - `docker-compose.yml` para despliegue en un solo clic compatible con Docker Compose v2 y Portainer.
   - Volúmenes persistentes (`./assets` y `./output`) para gestionar fotos, vídeos, audios y montajes finales desde el host o el navegador.
   - Archivo de entorno modelo [`.env.example`](.env.example).
   - Guía completa de despliegue en servidor / NAS: [`docs/DOCKER_DEPLOYMENT.md`](docs/DOCKER_DEPLOYMENT.md).

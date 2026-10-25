@@ -1,6 +1,6 @@
-# 🐳 Guía de Despliegue con Docker & Dockhand
+# 🐳 Guía de Despliegue con Docker
 
-Esta guía detalla cómo desplegar **Kroma Studio** de forma 100% autocontenida en cualquier servidor, NAS o equipo secundario utilizando **Docker Compose**, **Dockhand** o **Portainer**.
+Esta guía detalla cómo desplegar **Kroma Studio** de forma 100% autocontenida en cualquier servidor, NAS o equipo secundario utilizando **Docker Compose** o gestores como **Portainer**.
 
 ---
 
@@ -43,11 +43,11 @@ Una vez levantado, accede a:
 
 ---
 
-## 🎛️ Despliegue en Dockhand / Portainer (Stack Web)
+## 🎛️ Despliegue en Portainer (Stack Web)
 
-Si gestionas tus contenedores desde **Dockhand** o **Portainer**:
+Si gestionas tus contenedores desde una interfaz gráfica como **Portainer**:
 
-1. En Dockhand / Portainer, ve a la sección **Stacks** -> **Create Stack**.
+1. En Portainer, ve a la sección **Stacks** -> **Create Stack**.
 2. Asigna un nombre al stack: `kroma-studio`.
 3. Pega el siguiente contenido en el editor web:
 
